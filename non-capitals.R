@@ -119,7 +119,7 @@ world_outline_laea %>%
     geom_sf(data = country_borders, size = .25, color = "#BD92B7FF")+
     geom_sf(
         data = coo_geo, aes(size = n),
-        fill = "#ffeb3b", color = "#c8b900", shape = 21
+        fill = "#ffeb3b", color = "#c6a700", shape = 21
     )+
     scale_fill_viridis_c(option = "G", begin = .1)+
     scale_size_area(guide = NULL)+
@@ -131,10 +131,11 @@ world_outline_laea %>%
         fill = "Mentions\nper country"
     )+
     theme(
-        plot.background = element_rect(fill = "#b3e5fc", color = NA),
+        plot.background = element_rect(fill = "#e5ffff", color = NA),
         axis.text = element_blank(),
         legend.position = c(.8, .75),
-        plot.title = element_text(family = "Roboto Slab", face = 2, size = 16)
+        plot.title = element_text(family = "Roboto Slab", face = 2, size = 16),
+        text = element_text(color = "#c6a700")
     )
 
 ggsave(
