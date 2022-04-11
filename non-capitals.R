@@ -160,3 +160,9 @@ out <- leaflet(coo_geo) %>%
 
 htmlwidgets::saveWidget(out, "index.html", selfcontained = TRUE)
 
+
+# the users who participated
+uoo <- boo %>% pull(author_id) %>% lookup_users()
+
+# copy screen names for tagging
+uoo %>% pull(screen_name) %>% paste0("@", .) %>% clipr::write_clip()
